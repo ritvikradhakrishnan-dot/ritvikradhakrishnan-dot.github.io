@@ -45,8 +45,21 @@ h1 {
 
 .home-link { text-decoration: none; }
 
-.introduction { max-width: 730px; margin-top: 42px; }
+.introduction {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  align-items: start;
+  gap: 40px;
+  margin-top: 42px;
+}
 .introduction p + p { margin-top: 17px; }
+.portrait {
+  display: block;
+  width: 190px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
 .contact { font-size: 17px; overflow-wrap: anywhere; }
 
 .content-section { margin-top: 68px; }
@@ -94,6 +107,11 @@ a {
 a:hover { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
 .home-link:hover { text-decoration: underline; text-decoration-thickness: 1px; }
 a:focus-visible { border-radius: 2px; outline: 2px solid currentColor; outline-offset: 5px; }
+
+@media (max-width: 680px) {
+  .introduction { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .portrait { grid-row: 1; width: 150px; }
+}
 
 @media (max-width: 560px) {
   body { font-size: 17px; }
